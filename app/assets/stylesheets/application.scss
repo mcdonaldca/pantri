@@ -14,7 +14,9 @@
  *= require_self
  */
 
-$blue: #3F5666;
+$blue: #2F3440;
+$lite-blue: #3F5666;
+$lite-yellow: #F7EAC6;
 
 * {
   margin: 0;
@@ -34,7 +36,7 @@ a {
 .container {
   max-width: 375px;
   height: 100%;
-  background-color: #F7EAC6;
+  background-color: $lite-yellow;
   margin: 0 auto;
 }
 
@@ -77,5 +79,32 @@ header {
       width: 30px;
       height: 30px;
     }
+  }
+}
+
+menu {
+  height: 0;
+  overflow: hidden;
+  background-color: $lite-blue;
+
+  -webkit-transition: height .25s;
+          transition: height .25s;
+
+  div {
+    height: 35px;
+    box-sizing: border-box;
+    padding-top: 6px;
+    padding-right: 15px;
+    border-bottom: 1px solid $blue;
+
+    text-align: right;
+    color: $lite-yellow;
+    font: 15px Nunito;
+    font-weight: 300;
+  }
+
+  &.visible {
+    height: 70px;
+    border-bottom: 4px solid $blue;
   }
 }

@@ -14,10 +14,10 @@ User.delete_all
 # Days
 
 day1 = Day.new
-day1.day = 10
+day1.day = 11
 day1.month = 2
 day1.year = 2016
-day1.fruits_serv =  4
+day1.fruits_serv = 4
 day1.vegetables_serv = 6
 day1.grains_serv = 5
 day1.dairy_serv = 1
@@ -31,10 +31,67 @@ day1.sodium = 1635
 day1.sugars = 65
 day1.save()
 
+day2 = Day.new
+day2.day = 12
+day2.month = 2
+day2.year = 2016
+day2.fruits_serv = 1
+day2.vegetables_serv = 4
+day2.grains_serv = 2
+day2.dairy_serv = 2
+day2.protein_serv = 4
+day2.calories = 1749
+day2.carbs = 222
+day2.fat = 62
+day2.fiber = 16
+day2.protein = 27
+day2.sodium = 1534
+day2.sugars = 71
+day2.save()
+
+day3 = Day.new
+day3.day = 13
+day3.month = 2
+day3.year = 2016
+day3.fruits_serv = 2
+day3.vegetables_serv = 2
+day3.grains_serv = 0
+day3.dairy_serv = 0
+day3.protein_serv = 1
+day3.calories = 1724
+day3.carbs = 275
+day1.fat = 75
+day3.fiber = 9
+day3.protein = 26
+day3.sodium = 672
+day3.sugars = 185
+day3.save()
+
+
+
+today = Day.new
+today.day = 14
+today.month = 2
+today.year = 2016
+today.fruits_serv =  4
+today.vegetables_serv = 6
+today.grains_serv = 5
+today.dairy_serv = 1
+today.protein_serv = 4
+today.calories = 1724
+today.carbs = 222
+today.fat = 73
+today.fiber = 23
+today.protein = 34
+today.sodium = 1635
+today.sugars = 65
+today.save()
+
 
 # Users
 
 user = User.new
+user.name = "Caitlin McDonald"
 user.calorie_goal = 1200
 user.protein_goal = 85
 user.carbs_goal = 211
