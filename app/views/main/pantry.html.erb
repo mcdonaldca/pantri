@@ -1,6 +1,7 @@
 <div id="pantry">
   <div class="stripe"></div>
   <div class="stripe right"></div>
+  <div><%= @test %></div>
 
   <% right = false %>
   <% @groups.each do |group| %>
@@ -8,14 +9,16 @@
       <% right = !right %>
       <%= image_tag group + ".png", class: "food" %>
       <svg class="dots" version="1.1" x="0px" y="0px" width="605px" height="32px" viewBox="0 0 605 32" enable-background="new 0 0 605 32" xml:space="preserve">
+        <% i = 0 %>
         <% @dot_x.each do |x| %>
-          <circle fill="#EA6044" cx="<%= x %>" cy="16" r="7.9"/>
+          <circle class="<%= x[1] %> <% if @stats[group] > (i + 1) * 10 %>fill<% end %>" fill="#EA6044" cx="<%= x[0] %>" cy="16" r="7.9"/>
+          <% i += 1 %>
         <% end %>
       </svg>
       <div class="group">
-        <span class="stats left">(50%)</span>
+        <span class="stats left">(<%= @stats[group] %>%)</span>
         <%= group %>
-        <span class="stats right">(50%)</span>        
+        <span class="stats right">(<%= @stats[group] %>%)</span>        
       </div>
     </div>
   <% end %>

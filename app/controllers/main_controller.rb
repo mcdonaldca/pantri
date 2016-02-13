@@ -26,6 +26,21 @@ class MainController < ApplicationController
 
   def pantry
     @groups = ["vegetables", "fruits", "grains", "protein", "dairy"]
-    @dot_x = [42.40, 100.2, 158, 215.8, 273.6, 331.4, 389.2, 447, 504.8, 562.60]
+    @dot_x = [
+      [42.40, "red"], [100.2, "red"], 
+      [158, "red-yellow"], [215.8, "red-yellow"], 
+      [273.6, "yellow"], [331.4, "yellow"], 
+      [389.2, "yellow-green"], [447, "yellow-green"], 
+      [504.8, "green"], [562.60, "green"]
+    ]
+
+    day = Day.find_by day: 14
+    @stats = {
+      @groups[0] => day.vegetables_serv * 100 / 4, # vegetables
+      @groups[1] => day.fruits_serv * 100 / 3, # fruits
+      @groups[2] => day.grains_serv * 100 / 9, # grains
+      @groups[3] => day.protein_serv * 100 / 6, # protein
+      @groups[4] => day.dairy_serv * 100 / 3  # dairy
+    }
   end
 end

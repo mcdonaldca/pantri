@@ -246,6 +246,33 @@
       bottom: 0;
       width: 375px;
       height: 20px;
+
+      $red: #EB6044;
+      $red-yellow: #F19549;
+      $yellow: #F7CA4D;
+      $yellow-green: #A5BB54;
+      $green: #009E63;
+
+      circle.red { stroke: darken($red, 10%); stroke-width: 2; }
+      circle.red.fill { fill: $red; }
+      circle.red-yellow { stroke: darken($red-yellow, 10%); stroke-width: 2; }
+      circle.red-yellow.fill { fill: $red-yellow; }
+      circle.yellow { stroke: darken($yellow, 10%); stroke-width: 2; }
+      circle.yellow.fill { fill: $yellow; }
+      circle.yellow-green { stroke: darken($yellow-green, 10%); stroke-width: 2; }
+      circle.yellow-green.fill { fill: $yellow-green; }
+      circle.green { stroke: darken($green, 10%); stroke-width: 2; }
+      circle.green.fill { fill: $green; }
+
+      circle {
+        fill: white;
+        stroke: darken(white, 10%);
+        stroke-width: 2;
+      }
+
+      .fill {
+        fill: green;
+      }
     }
 
     .group {
