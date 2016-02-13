@@ -234,11 +234,11 @@
       position: absolute;
       left: 0;
       bottom: 20px;
+    }
 
-      &.right {
-        left: auto;
-        right: 0;
-      }
+    &.right .food {
+      left: auto;
+      right: 0;
     }
 
     .dots {
@@ -246,6 +246,35 @@
       bottom: 0;
       width: 375px;
       height: 20px;
+    }
+
+    .group {
+      position: relative;
+      right: 40px;
+      bottom: 60px;
+      font: 25px Nunito;
+      float: right;
+
+      .stats {
+        font-size: 13px;
+      }
+    }
+
+    .group .stats.right {
+      display: none;
+    }
+
+    &.right .group {
+      float: left;
+      left: 40px;
+      right: auto;
+
+      .stats.right {
+        display: inline;
+      }
+      .stats.left {
+        display: none;
+      }
     }
   }
 }

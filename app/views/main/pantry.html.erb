@@ -4,16 +4,19 @@
 
   <% right = false %>
   <% @groups.each do |group| %>
-    <div class="shelf <%= group %>">
-      <% classes = "food" %>
-      <% classes += " right" if right %>
+    <div class="shelf <%= group %> <% if right %> right <% end %>">
       <% right = !right %>
-      <%= image_tag group + ".png", class: classes %>
+      <%= image_tag group + ".png", class: "food" %>
       <svg class="dots" version="1.1" x="0px" y="0px" width="605px" height="32px" viewBox="0 0 605 32" enable-background="new 0 0 605 32" xml:space="preserve">
         <% @dot_x.each do |x| %>
           <circle fill="#EA6044" cx="<%= x %>" cy="16" r="7.9"/>
         <% end %>
       </svg>
+      <div class="group">
+        <span class="stats left">(50%)</span>
+        <%= group %>
+        <span class="stats right">(50%)</span>        
+      </div>
     </div>
   <% end %>
 </div>
