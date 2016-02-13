@@ -1,3 +1,187 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#index {
+  .circle {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 167.5px;
+  }
+
+  @keyframes outer-corn {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+  }
+
+  @keyframes outer-bread {
+    from { transform:rotate(20deg); }
+    to { transform:rotate(380deg); }
+  }
+
+  @keyframes outer-grape {
+    from { transform:rotate(40deg); }
+    to { transform:rotate(400deg); }
+  }
+
+  @keyframes outer-cheese {
+    from { transform:rotate(60deg); }
+    to { transform:rotate(420deg); }
+  }
+
+  @keyframes outer-apple {
+    from { transform:rotate(80deg); }
+    to { transform:rotate(440deg); }
+  }
+
+  @keyframes outer-chicken {
+    from { transform:rotate(100deg); }
+    to { transform:rotate(460deg); }
+  }
+
+  @keyframes outer-fish {
+    from { transform:rotate(120deg); }
+    to { transform:rotate(480deg); }
+  }
+
+  @keyframes outer-pineapple {
+    from { transform:rotate(140deg); }
+    to { transform:rotate(500deg); }
+  }
+
+  @keyframes outer-sweet-potato {
+    from { transform:rotate(160deg); }
+    to { transform:rotate(520deg); }
+  }
+
+  @keyframes outer-banana {
+    from { transform:rotate(180deg); }
+    to { transform:rotate(540deg); }
+  }
+
+  @keyframes outer-meat {
+    from { transform:rotate(200deg); }
+    to { transform:rotate(560deg); }
+  }
+
+  @keyframes outer-shrimp {
+    from { transform:rotate(220deg); }
+    to { transform:rotate(580deg); }
+  }
+
+  @keyframes outer-egg {
+    from { transform:rotate(240deg); }
+    to { transform:rotate(600deg); }
+  }
+
+  @keyframes outer-rice {
+    from { transform:rotate(260deg); }
+    to { transform:rotate(620deg); }
+  }
+
+  @keyframes outer-ice-cream {
+    from { transform:rotate(280deg); }
+    to { transform:rotate(640deg); }
+  }
+
+  @keyframes outer-pear {
+    from { transform:rotate(300deg); }
+    to { transform:rotate(660deg); }
+  }
+
+  @keyframes outer-eggplant {
+    from { transform:rotate(320deg); }
+    to { transform:rotate(680deg); }
+  }
+
+  @keyframes outer-cookie {
+    from { transform:rotate(340deg); }
+    to { transform:rotate(700deg); }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    transform-origin: 50% 180px;
+  }
+
+  .icon.corn {
+    animation: outer-corn 8s linear infinite;
+  }
+
+  .icon.bread {
+    animation: outer-bread 8s linear infinite;
+  }
+
+  .icon.grape {
+    animation: outer-grape 8s linear infinite;
+  }
+
+  .icon.cheese {
+    animation: outer-cheese 8s linear infinite;
+  }
+
+  .icon.apple {
+    animation: outer-apple 8s linear infinite;
+  }
+
+  .icon.chicken {
+    animation: outer-chicken 8s linear infinite;
+  }
+
+  .icon.fish {
+    animation: outer-fish 8s linear infinite;
+  }
+
+  .icon.pineapple {
+    animation: outer-pineapple 8s linear infinite;
+  }
+
+  .icon.sweet-potato {
+    animation: outer-sweet-potato 8s linear infinite;
+  }
+
+  .icon.banana {
+    animation: outer-banana 8s linear infinite;
+  }
+
+  .icon.meat {
+    animation: outer-meat 8s linear infinite;
+  }
+
+  .icon.shrimp {
+    animation: outer-shrimp 8s linear infinite;
+  }
+
+  .icon.egg {
+    animation: outer-egg 8s linear infinite;
+  }
+
+  .icon.rice {
+    animation: outer-rice 8s linear infinite;
+  }
+
+  .icon.ice-cream {
+    animation: outer-ice-cream 8s linear infinite;
+  }
+
+  .icon.pear {
+    animation: outer-pear 8s linear infinite;
+  }
+
+  .icon.eggplant {
+    animation: outer-eggplant 8s linear infinite;
+  }
+
+  .icon.cookie {
+    animation: outer-cookie 8s linear infinite;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
