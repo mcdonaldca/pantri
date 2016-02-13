@@ -204,6 +204,7 @@
 }
 
 #pantry {
+  padding-top: 20px;
   .stripe {
     position: absolute;
     top: 0;
@@ -221,10 +222,17 @@
 
   .shelf {
     position: relative;
+    background-image: url(<%= asset_path( 'shelf.svg' ) %>);
+    background-size: 375px 66px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
     z-index: 1;
-    padding-top: 50px;
-    img {
-      width: 100%;
+    padding-top: 100px;
+    img, svg {
+      position: absolute;
+      bottom: 0;
+      width: 375px;
+      height: 20px;
     }
   }
 }

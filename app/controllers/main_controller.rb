@@ -25,5 +25,7 @@ class MainController < ApplicationController
   end
 
   def pantry
+    @groups = ["vegetables", "fruits", "grains", "protein", "dairy"]
+    @dot_x = [42.40, 100.2, 158, 215.8, 273.6, 331.4, 389.2, 447, 504.8, 562.60]
   end
 end
