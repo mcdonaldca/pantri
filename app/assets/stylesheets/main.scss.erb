@@ -227,8 +227,21 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     z-index: 1;
-    padding-top: 100px;
-    img, svg {
+    padding-top: 120px;
+
+    .food {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+
+      &.right {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    .dots {
       position: absolute;
       bottom: 0;
       width: 375px;
