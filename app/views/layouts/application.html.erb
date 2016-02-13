@@ -11,8 +11,14 @@
 <body>
   <div class="container">
     <header>
-      <div id="pantri">pantri</div>
-      <div id="logo"><%= image_tag "logo.svg" %></div>
+      <%= link_to index_url do %>
+        <div id="pantri">pantri</div>
+      <% end %>
+      <div id="logo">
+        <%= link_to index_url do %>
+          <%= image_tag "logo.svg" %>
+        <% end %>
+      </div>
       <div id="menu-burger"><%= image_tag "menu.png" %></div>
     </header>
     <%= yield %>
