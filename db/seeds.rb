@@ -9,6 +9,7 @@
 # Clear existing data
 
 Day.delete_all
+User.delete_all
 
 # Days
 
@@ -31,12 +32,14 @@ day1.sugars = 65
 day1.save()
 
 
-# User
+# Users
 
-#calorie_goal 1200
-#protein_goal 85
-#carbs_goal 211
-#fiber_goal 25
-#sugars_goal 63
-#fat_goal 56
-#sodium_goal 2300
+user = User.new
+user.calorie_goal = 1200
+user.protein_goal = 85
+user.carbs_goal = 211
+user.fiber_goal = 25
+user.sugars_goal = 63
+user.fat_goal = 56
+user.sodium_goal = 2300
+user.save()
