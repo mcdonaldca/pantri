@@ -16,6 +16,7 @@
 
     background-color: #EB6044;
     text-align: center;
+    color: white;
     font: 17px Nunito;
     font-weight: 300;
   }
@@ -199,5 +200,30 @@
   img {
     width: 40px;
     height: 40px;
+  }
+}
+
+#pantry {
+  .stripe {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    width: 25px;
+    background-color: #E2D6B7;
+    height: 100%;
+
+    &.right {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .shelf {
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    img {
+      width: 100%;
+    }
   }
 }

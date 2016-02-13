@@ -18,7 +18,7 @@ class MainController < ApplicationController
 
     request.set_form_data({"code" => params[:code], "grant_type" => "authorization_code", "client_id" => "227GGZ"})
     response = http.request(request)
-    redirect_to summary_url
+    redirect_to pantry_url
   end
 
   def summary
