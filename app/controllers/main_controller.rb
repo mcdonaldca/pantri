@@ -24,6 +24,6 @@ class MainController < ApplicationController
   def summary
   end
 
-  def fridge
+  def pantry
   end
 end
