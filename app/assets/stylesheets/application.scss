@@ -42,6 +42,7 @@ a {
 
 header {
   position: relative;
+  z-index: 1;
   height: 50px;
   background-color: $blue;
 
@@ -83,6 +84,9 @@ header {
 }
 
 menu {
+  position: absolute;
+  z-index: 0;
+  width: 375px;
   height: 0;
   overflow: hidden;
   background-color: $lite-blue;

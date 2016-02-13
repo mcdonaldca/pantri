@@ -6,13 +6,15 @@
 #index {
   .auth-button {
     display: block;
-    width: 50%;
+    box-sizing: border-box;
+    height: 220px;
+    width: 220px;
 
-    margin: 220px auto 0;
-    padding: 10px;
-    border-radius: 15px;
-    
-    background-color: #16C4B6;
+    margin: 130px auto 0;
+    padding-top: 100px;
+    border-radius: 50%;
+
+    background-color: #EB6044;
     text-align: center;
     font: 17px Nunito;
     font-weight: 300;
