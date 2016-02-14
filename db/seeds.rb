@@ -219,7 +219,7 @@ skillet.dairy_serving = false
 skillet.save()
 
 macncheese = Recipe.new
-macncheese.name = "Macaroni & Cheese"
+macncheese.name = "Macaroni and Cheese"
 macncheese.vegetable_serving = false
 macncheese.fruit_serving = false
 macncheese.grain_serving = true
