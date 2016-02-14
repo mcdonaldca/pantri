@@ -1,5 +1,5 @@
 class AlexaController < ApplicationController
-  layout :json
+  layout "json"
 
   def dinner
     @json = "{ \"meal\": \"Cheddar Broccoli Casserole\" }"
