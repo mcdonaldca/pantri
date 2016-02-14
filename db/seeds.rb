@@ -100,3 +100,14 @@ user.sugars_goal = 63
 user.fat_goal = 56
 user.sodium_goal = 2300
 user.save()
+
+
+# Fridge items
+
+milk = Item.new
+milk.name = "milk:skim milk:skim"
+milk.save()
+
+macaroni = Item.new
+macaroni.name = "macaroni:macaroni noodles:macaroni pasta:noodles:pasta"
+macaroni.save()

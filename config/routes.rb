@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   get "fitbit" => "main#fitbit"
+  get "lifx" => "main#lifx"
   get "summary" => "main#summary", :as => :summary
   get "pantry" => "main#pantry", :as => :pantry
 

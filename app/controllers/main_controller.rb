@@ -21,6 +21,9 @@ class MainController < ApplicationController
     redirect_to pantry_url
   end
 
+  def lifx
+  end
+
   def summary
   end
 
