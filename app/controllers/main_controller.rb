@@ -46,4 +46,20 @@ class MainController < ApplicationController
       @groups[4] => day.dairy_serv * 100 / 3  # dairy
     }
   end
+
+  def recipes
+    uri = URI('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/ingredients/autocomplete?query=appl')
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(uri.request_uri)
+
+    request.add_field('X-Mashape-Key', 'o06rgrhTPsmshwPFai0Yff72bzxXp1oxIsRjsn31KsIulAAerJ')
+    request.add_field('Accept', 'application/json')
+
+    response = http.request(request)
+    @code = response.body
+  end
 end
