@@ -152,12 +152,80 @@ bread_crumbs.name = "bread crumbs"
 bread_crumbs.in_fridge = true
 bread_crumbs.save()
 
+shrimp = Ingredient.new
+shrimp.name = "shrimp"
+shrimp.in_fridge = true
+shrimp.save()
+
+garlic = Ingredient.new
+garlic.name = "garlic:garlic cloves"
+garlic.in_fridge = true
+garlic.save()
+
+honey = Ingredient.new
+honey.name = "honey"
+honey.in_fridge = true
+honey.save()
+
+ginger = Ingredient.new
+ginger.name = "ginger"
+ginger.in_fridge = false
+ginger.save()
+
+soy_sauce = Ingredient.new
+soy_sauce.name = "soy sauce"
+soy_sauce.in_fridge = true
+soy_sauce.save()
+
+chicken = Ingredient.new
+chicken.name = "chicken"
+chicken.in_fridge = false
+chicken.save()
+
+alfredo = Ingredient.new
+alfredo.name = "alfredo"
+alfredo.in_fridge = true
+alfredo.save()
+
+olive_oil = Ingredient.new
+olive_oil.name = "olive oil"
+olive_oil.in_fridge = true
+olive_oil.save()
+
+chicken_broth = Ingredient.new
+chicken_broth.name = "chicken broth"
+chicken_broth.in_fridge = true
+chicken_broth.save()
+
 
 # Receipes
 
 casserole = Recipe.new
 casserole.name = "Cheddar Broccoli Casserole"
+casserole.vegetable_serving = true
+casserole.fruit_serving = false
+casserole.grain_serving = false
+casserole.protein_serving = false
+casserole.dairy_serving = false
 casserole.save()
+
+skillet = Recipe.new
+skillet.name = "Honey Garlic Shrimp Skillet"
+skillet.vegetable_serving = false
+skillet.fruit_serving = false
+skillet.grain_serving = false
+skillet.protein_serving = true
+skillet.dairy_serving = false
+skillet.save()
+
+pasta = Recipe.new
+pasta.name = "Chicken Alfredo Baked Pasta"
+pasta.vegetable_serving = false
+pasta.fruit_serving = false
+pasta.grain_serving = true
+pasta.protein_serving = false
+pasta.dairy_serving = true
+pasta.save()
 
 
 # Pairs
@@ -201,3 +269,68 @@ pair8 = Pair.new
 pair8.ingredient_id = bread_crumbs.id
 pair8.recipe_id = casserole.id
 pair8.save()
+
+pair9 = Pair.new
+pair9.ingredient_id = shrimp.id
+pair9.recipe_id = skillet.id
+pair9.save()
+
+pair10 = Pair.new
+pair10.ingredient_id = garlic.id
+pair10.recipe_id = skillet.id
+pair10.save()
+
+pair11 = Pair.new
+pair11.ingredient_id = ginger.id
+pair11.recipe_id = skillet.id
+pair11.save()
+
+pair12 = Pair.new
+pair12.ingredient_id = honey.id
+pair12.recipe_id = skillet.id
+pair12.save()
+
+pair13 = Pair.new
+pair13.ingredient_id = soy_sauce.id
+pair13.recipe_id = skillet.id
+pair13.save()
+
+pair14 = Pair.new
+pair14.ingredient_id = chicken.id
+pair14.recipe_id = pasta.id
+pair14.save()
+
+pair15 = Pair.new
+pair15.ingredient_id = alfredo.id
+pair15.recipe_id = pasta.id
+pair15.save()
+
+pair16 = Pair.new
+pair16.ingredient_id = cheddar_cheese.id
+pair16.recipe_id = pasta.id
+pair16.save()
+
+pair17 = Pair.new
+pair17.ingredient_id = garlic.id
+pair17.recipe_id = pasta.id
+pair17.save()
+
+pair18 = Pair.new
+pair18.ingredient_id = flour.id
+pair18.recipe_id = pasta.id
+pair18.save()
+
+pair19 = Pair.new
+pair19.ingredient_id = milk.id
+pair19.recipe_id = pasta.id
+pair19.save()
+
+pair20 = Pair.new
+pair20.ingredient_id = olive_oil.id
+pair20.recipe_id = pasta.id
+pair20.save()
+
+pair21 = Pair.new
+pair21.ingredient_id = chicken_broth.id
+pair21.recipe_id = pasta.id
+pair21.save()
