@@ -52,7 +52,7 @@ class AlexaController < ApplicationController
     end
 
 
-    @json = %Q({ "meal": { "name": ") + recipe + %Q(", "id": ") + id.to_s + %Q(" } })
+    @json = recipe + ":" + id
   end
 
   def check_missing 
@@ -66,9 +66,9 @@ class AlexaController < ApplicationController
     end
 
     if need.empty?
-      json = %Q({ "ready": "true" })
+      json = %Q({ ready: true })
     else
-      json = %Q({ "ready": "false", "missing": ") + need[0] + %Q(" })
+      json = %Q({ ready: false, missing: ) + need[0] + %Q( })
     end
 
     @json = json
@@ -81,6 +81,6 @@ class AlexaController < ApplicationController
     ingredient.exp_days = exp.to_i
     ingredient.save()
 
-    @json = %Q({ "success": "true" })
+    @json = %Q({ success: true })
   end
 end
