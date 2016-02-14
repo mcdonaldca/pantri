@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "pantry" => "main#pantry", :as => :pantry
   get "recipes" => "main#recipes", :as => :recipes
 
-  post "api/lifx/all/toggle" => "api#lifx_toggle", :as => :lifx_toggle
+  get "api/lifx/all/toggle" => "api#lifx_toggle", :as => :lifx_toggle
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
