@@ -87,7 +87,7 @@ class MainController < ApplicationController
     set_light("d073d51260d5", fruits_color)
     set_light("d073d511f543", protein_color)
 
-    veg_uri = URI('https://lphgxhbfcy.localtunnel.me/api/robots/pantribot/commands/writeMessage')
+    veg_uri = URI('https://ribeyqqcvx.localtunnel.me/api/robots/pantribot/commands/writeMessage')
     veg_http = Net::HTTP.new(veg_uri.host, veg_uri.port)
     veg_http.use_ssl = true
     veg_http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -99,7 +99,7 @@ class MainController < ApplicationController
     veg_response = veg_http.request(veg_request)
     puts veg_response
 
-    fruits_uri = URI('https://qwqwjndpsg.localtunnel.me/api/robots/pantribot/commands/writeMessage')
+    fruits_uri = URI('https://imlmvxtado.localtunnel.me/api/robots/pantribot/commands/writeMessage')
     fruits_http = Net::HTTP.new(fruits_uri.host, fruits_uri.port)
     fruits_http.use_ssl = true
     fruits_http.verify_mode = OpenSSL::SSL::VERIFY_NONE
