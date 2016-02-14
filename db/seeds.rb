@@ -116,3 +116,9 @@ milk.save()
 macaroni = Item.new
 macaroni.name = "macaroni:macaroni noodles:macaroni pasta:noodles:pasta"
 macaroni.save()
+
+
+# Ingredients
+
+
+# Receipes
