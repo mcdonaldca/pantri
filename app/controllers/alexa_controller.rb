@@ -52,7 +52,7 @@ class AlexaController < ApplicationController
     end
 
 
-    @json = recipe + ":" + id
+    @json = recipe + ":" + id.to_s
   end
 
   def check_missing 
