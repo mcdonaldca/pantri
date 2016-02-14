@@ -70,7 +70,7 @@ class MainController < ApplicationController
     @code = response.body
   end
 
-  
+
   def lifx_toggle
     uri = URI('https://api.lifx.com/v1/lights/all/toggle')
 
@@ -89,7 +89,17 @@ class MainController < ApplicationController
 
   private
   def get_color(amount)
-
+    if amount < 20 
+      return "red"
+    elsif amount < 40
+      return "orange"
+    elsif amount < 60
+      return "yellow"
+    elsif amount < 80
+      return "yellow_green"
+    else
+      return "green"
+    end
   end
 
   def set_vegetable_light(color)
