@@ -52,6 +52,30 @@ class MainController < ApplicationController
     set_light("d073d510f8bc", veg_color)
     set_light("d073d51260d5", fruits_color)
     set_light("d073d511f543", protein_color)
+
+    veg_uri = URI('https://lphgxhbfcy.localtunnel.me/api/robots/pantribot/commands/writeMessage')
+    veg_http = Net::HTTP.new(veg_uri.host, veg_uri.port)
+    veg_http.use_ssl = true
+    veg_http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    veg_request = Net::HTTP::Post.new(veg_uri.request_uri)
+    veg_request.add_field('Accept', 'application/json')
+    veg_request.add_field('Content-Type', 'application/json')
+    veg_message = "Vegetables (" + @stats["vegetables"].to_s + "%)"
+    veg_request.set_form_data({"message" => veg_message, "color" => veg_color})
+    veg_response = veg_http.request(veg_request)
+    puts veg_response
+
+    fruits_uri = URI('https://qwqwjndpsg.localtunnel.me/api/robots/pantribot/commands/writeMessage')
+    fruits_http = Net::HTTP.new(fruits_uri.host, fruits_uri.port)
+    fruits_http.use_ssl = true
+    fruits_http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    fruits_request = Net::HTTP::Post.new(fruits_uri.request_uri)
+    fruits_request.add_field('Accept', 'application/json')
+    fruits_request.add_field('Content-Type', 'application/json')
+    fruits_message = "Fruits (" + @stats["fruits"].to_s + "%)"
+    fruits_request.set_form_data({"message" => fruits_message, "color" => fruits_color})
+    fruits_response = fruits_http.request(fruits_request)
+    puts fruits_response
   end
 
   def recipes
