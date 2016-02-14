@@ -14,83 +14,6 @@ Ingredient.delete_all
 Recipe.delete_all
 Pair.delete_all
 
-# Days
-
-day1 = Day.new
-day1.day = 11
-day1.month = 2
-day1.year = 2016
-day1.fruits_serv = 4
-day1.vegetables_serv = 6
-day1.grains_serv = 5
-day1.dairy_serv = 1
-day1.protein_serv = 4
-day1.calories = 1724
-day1.carbs = 222
-day1.fat = 73
-day1.fiber = 23
-day1.protein = 34
-day1.sodium = 1635
-day1.sugars = 65
-day1.save()
-
-day2 = Day.new
-day2.day = 12
-day2.month = 2
-day2.year = 2016
-day2.fruits_serv = 1
-day2.vegetables_serv = 4
-day2.grains_serv = 2
-day2.dairy_serv = 2
-day2.protein_serv = 4
-day2.calories = 1749
-day2.carbs = 222
-day2.fat = 62
-day2.fiber = 16
-day2.protein = 27
-day2.sodium = 1534
-day2.sugars = 71
-day2.save()
-
-day3 = Day.new
-day3.day = 13
-day3.month = 2
-day3.year = 2016
-day3.fruits_serv = 2
-day3.vegetables_serv = 2
-day3.grains_serv = 0
-day3.dairy_serv = 0
-day3.protein_serv = 1
-day3.calories = 1724
-day3.carbs = 275
-day1.fat = 75
-day3.fiber = 9
-day3.protein = 26
-day3.sodium = 672
-day3.sugars = 185
-day3.save()
-
-
-
-today = Day.new
-today.day = 14
-today.month = 2
-today.year = 2016
-today.fruits_serv =  1
-today.vegetables_serv = 0
-today.grains_serv = 5
-today.dairy_serv = 1
-today.protein_serv = 1
-today.calories = 689
-today.carbs = 222
-today.fat = 73
-today.fiber = 23
-today.protein = 34
-today.sodium = 1635
-today.sugars = 65
-today.save()
-
-
 # Users
 
 user = User.new
@@ -109,6 +32,83 @@ user.fat_goal = 56
 user.sodium_goal = 2300
 user.save()
 
+# Days
+
+day1 = Day.new
+day1.day = 11
+day1.month = 2
+day1.year = 2016
+day1.fruits_serv = 4
+day1.vegetables_serv = 6
+day1.grains_serv = 5
+day1.dairy_serv = 1
+day1.protein_serv = 4
+day1.calories = 1724
+day1.carbs = 222
+day1.fat = 73
+day1.fiber = 23
+day1.protein = 34
+day1.sodium = 1635
+day1.sugars = 65
+day1.user_id = user.id
+day1.save()
+
+day2 = Day.new
+day2.day = 12
+day2.month = 2
+day2.year = 2016
+day2.fruits_serv = 1
+day2.vegetables_serv = 4
+day2.grains_serv = 2
+day2.dairy_serv = 2
+day2.protein_serv = 4
+day2.calories = 1749
+day2.carbs = 222
+day2.fat = 62
+day2.fiber = 16
+day2.protein = 27
+day2.sodium = 1534
+day2.sugars = 71
+day2.user_id = user.id
+day2.save()
+
+day3 = Day.new
+day3.day = 13
+day3.month = 2
+day3.year = 2016
+day3.fruits_serv = 2
+day3.vegetables_serv = 2
+day3.grains_serv = 0
+day3.dairy_serv = 0
+day3.protein_serv = 1
+day3.calories = 1724
+day3.carbs = 275
+day1.fat = 75
+day3.fiber = 9
+day3.protein = 26
+day3.sodium = 672
+day3.sugars = 185
+day3.user_id = user.id
+day3.save()
+
+today = Day.new
+today.day = 14
+today.month = 2
+today.year = 2016
+today.fruits_serv =  1
+today.vegetables_serv = 0
+today.grains_serv = 5
+today.dairy_serv = 1
+today.protein_serv = 1
+today.calories = 689
+today.carbs = 222
+today.fat = 73
+today.fiber = 23
+today.protein = 34
+today.sodium = 1635
+today.sugars = 65
+today.user_id = user.id
+today.save()
 
 # Ingredients
 
@@ -334,3 +334,178 @@ pair21 = Pair.new
 pair21.ingredient_id = chicken_broth.id
 pair21.recipe_id = pasta.id
 pair21.save()
+
+# Foods eaten by Users
+
+## Day 1 foods 
+rice = Meal.new
+rice.name = "rice:jasmine rice"
+rice.servings = 0.8
+rice.day_id = day1.id
+rice.save()
+
+canned_crab = Meal.new
+canned_crab.name = "crab:white crab:canned crab"
+canned_crab.servings = 1.8
+canned_crab.day_id = day1.id
+canned_crab.save()
+
+scrambled_egg = Meal.new
+scrambled_egg.name = "scrambled egg"
+scrambled_egg.servings = 0.8
+scrambled_egg.day_id = day1.id
+scrambled_egg.save()
+
+broccoli = Meal.new
+broccoli.name = "broccoli"
+broccoli.servings = 1.2
+broccoli.day_id = day1.id
+broccoli.save()
+
+kale_salad = Meal.new
+kale_salad.name = "kale salad:lemon kale salad"
+kale_salad.servings = 2.5
+kale_salad.day_id = day1.id
+kale_salad.save()
+
+red_onion = Meal.new
+red_onion.name = "red onion"
+red_onion.servings = 0.75
+red_onion.day_id = day1.id
+red_onion.save()
+
+shallot = Meal.new
+shallot.name = "shallot"
+shallot.servings = 2.0
+shallot.day_id = day1.id
+shallot.save()
+
+turkey_bacon = Meal.new
+turkey_bacon.name = "turkey_bacon"
+turkey_bacon.servings = 2.75
+turkey_bacon.day_id = day1.id
+turkey_bacon.save()
+
+mushrooms = Meal.new
+mushrooms.name = "mushrooms:white mushrooms:sliced mushrooms"
+mushrooms.servings = 1.8
+mushrooms.day_id = day1.id
+mushrooms.save()
+
+squash = Meal.new
+squash.name = "squash:butternut squash:winter squash:raw squash"
+squash.servings = 3.0
+squash.day_id = day1.id
+squash.save()
+
+quinoa = Meal.new
+quinoa.name = "quinoa"
+quinoa.servings = 1.0
+quinoa.day_id = day1.id
+quinoa.save()
+
+apple = Meal.new
+apple.name = "apple:pink lady apple"
+apple.servings = 0.2
+apple.day_id = day1.id
+apple.save()
+
+pretzels = Meal.new
+pretzels.name = "pretzels:pretzel thins"
+pretzels.servings = 1.0
+pretzels.day_id = day1.id
+pretzels.save()
+
+## Day 2 foods
+
+tomatoes = Meal.new
+tomatoes.name = "tomatoes:diced tomatoes"
+tomatoes.servings = 1.5
+tomatoes.day_id = day2.id
+tomatoes.save()
+
+salsa = Meal.new
+salsa.name = "salsa:tomato salsa"
+salsa.servings = 1.8
+salsa.day_id = day2.id
+salsa.save()
+
+chickpeas = Meal.new
+chickpeas.name = "chickpeas:garbanzo beans"
+chickpeas.servings = 0.7
+chickpeas.day_id = day2.id
+chickpeas.save()
+
+ground_beef = Meal.new
+ground_beef.name = "ground beef:hamburger meat"
+ground_beef.servings = 0.6
+ground_beef.day_id = day2.id
+ground_beef.save()
+
+kale = Meal.new
+kale.name = "kale"
+kale.servings = 1.0
+kale.day_id = day2.id
+kale.save()
+
+onion = Meal.new
+onion.name = "onion:white onion"
+onion.servings = 0.3
+onion.day_id = day2.id
+onion.save()
+
+green_pepper = Meal.new
+green_pepper.name = "green pepper:green bell pepper:bell pepper"
+green_pepper.servings = 0.1
+green_pepper.day_id = day2.id
+green_pepper.save()
+
+zucchini = Meal.new
+zucchini.name = "zucchini:zucchini squash"
+zucchini.servings = 0.4
+zucchini.day_id = day2.id
+zucchini.save()
+
+rice2 = Meal.new
+rice2.name = "rice:jasmine rice"
+rice2.servings = 0.8
+rice2.day_id = day2.id
+rice2.save()
+
+canned_crab2 = Meal.new
+canned_crab2.name = "crab:white crab:canned crab"
+canned_crab2.servings = 1.8
+canned_crab2.day_id = day2.id
+canned_crab2.save()
+
+scrambled_egg2 = Meal.new
+scrambled_egg2.name = "scrambled egg"
+scrambled_egg2.servings = 0.8
+scrambled_egg2.day_id = day2.id
+scrambled_egg2.save()
+
+broccoli2 = Meal.new
+broccoli2.name = "broccoli"
+broccoli2.servings = 1.2
+broccoli2.day_id = day2.id
+broccoli2.save()
+
+## Day 3 foods
+
+apple2 = Meal.new
+apple2.name = "apple:pink lady apple"
+apple2.servings = 1.0
+apple2.day_id = day3.id
+apple2.save()
+
+kale_salad2 = Meal.new
+kale_salad2.name = "kale salad:lemon kale salad"
+kale_salad2.servings = 2.5
+kale_salad2.day_id = day3.id
+kale_salad2.save()
+
+guava_juice = Meal.new
+guava_juice.name = "guava juice"
+guava_juice.servings = 2.0
+guava_juice.day_id = day3.id
+guava_juice.save()
