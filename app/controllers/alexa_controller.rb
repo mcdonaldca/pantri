@@ -35,11 +35,20 @@ class AlexaController < ApplicationController
     end
 
     recipe = "Cheddar Broccoli Casserole"
-    id = 0;
+    id = -1
+    exp_high = 30
     recipes.each do |r|
-      recipe = r.name
-      id = r.id
-      break
+      if id == -1
+        recipe = r.name
+        id = r.id
+      end
+
+      r.ingredients.each do |i|
+        if i.exp_days != -1 and i.exp_days < exp_high
+          recipe = r.name
+          id = r.id
+        end
+      end
     end
 
 
@@ -63,5 +72,15 @@ class AlexaController < ApplicationController
     end
 
     @json = json
+  end
+
+  def mark_expiring
+    ingredient = Ingredient.find_by name: params[:ing]
+    exp = params[:exp]
+
+    ingredient.exp_days = exp.to_i
+    ingredient.save()
+
+    @json = %Q({ "success": "true" })
   end
 end

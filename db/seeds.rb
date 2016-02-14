@@ -218,6 +218,15 @@ skillet.protein_serving = true
 skillet.dairy_serving = false
 skillet.save()
 
+macncheese = Recipe.new
+macncheese.name = "Macaroni & Cheese"
+macncheese.vegetable_serving = false
+macncheese.fruit_serving = false
+macncheese.grain_serving = true
+macncheese.protein_serving = false
+macncheese.dairy_serving = true
+macncheese.save()
+
 pasta = Recipe.new
 pasta.name = "Chicken Alfredo Baked Pasta"
 pasta.vegetable_serving = false
@@ -334,6 +343,23 @@ pair21 = Pair.new
 pair21.ingredient_id = chicken_broth.id
 pair21.recipe_id = pasta.id
 pair21.save()
+
+pair22 = Pair.new
+pair22.ingredient_id = milk.id
+pair22.recipe_id = macncheese.id
+pair22.save()
+
+pair23 = Pair.new
+pair23.ingredient_id = cheddar_cheese.id
+pair23.recipe_id = macncheese.id
+pair23.save()
+
+pair24 = Pair.new
+pair24.ingredient_id = macaroni.id
+pair24.recipe_id = macncheese.id
+pair24.save()
+
+
 
 # Foods eaten by Users
 
