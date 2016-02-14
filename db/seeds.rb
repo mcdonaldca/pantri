@@ -11,6 +11,8 @@
 Day.delete_all
 User.delete_all
 Ingredient.delete_all
+Recipe.delete_all
+Pair.delete_all
 
 # Days
 
@@ -152,3 +154,50 @@ bread_crumbs.save()
 
 
 # Receipes
+
+casserole = Recipe.new
+casserole.name = "Cheddar Broccoli Casserole"
+casserole.save()
+
+
+# Pairs
+
+pair1 = Pair.new
+pair1.ingredient_id = milk.id
+pair1.recipe_id = casserole.id
+pair1.save()
+
+pair2 = Pair.new
+pair2.ingredient_id = butter.id
+pair2.recipe_id = casserole.id
+pair2.save()
+
+pair3 = Pair.new
+pair3.ingredient_id = milk.id
+pair3.recipe_id = casserole.id
+pair3.save()
+
+pair4 = Pair.new
+pair4.ingredient_id = flour.id
+pair4.recipe_id = casserole.id
+pair4.save()
+
+pair5 = Pair.new
+pair5.ingredient_id = cheddar_cheese.id
+pair5.recipe_id = casserole.id
+pair5.save()
+
+pair6 = Pair.new
+pair6.ingredient_id = djon_mustard.id
+pair6.recipe_id = casserole.id
+pair6.save()
+
+pair7 = Pair.new
+pair7.ingredient_id = broccoli.id
+pair7.recipe_id = casserole.id
+pair7.save()
+
+pair8 = Pair.new
+pair8.ingredient_id = bread_crumbs.id
+pair8.recipe_id = casserole.id
+pair8.save()
