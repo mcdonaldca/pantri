@@ -52,7 +52,7 @@ class AlexaController < ApplicationController
     end
 
 
-    @json = recipe + ":" + id.to_s
+    @json = min_category + ":" + recipe + ":" + id.to_s
   end
 
   def check_missing 
@@ -66,9 +66,9 @@ class AlexaController < ApplicationController
     end
 
     if need.empty?
-      json = %Q({ ready: true })
+      json = %Q(true)
     else
-      json = %Q({ ready: false, missing: ) + need[0] + %Q( })
+      json = %Q(false:) + need[0]
     end
 
     @json = json
