@@ -30,11 +30,11 @@ class MainController < ApplicationController
   def pantry
     @groups = ["vegetables", "fruits", "grains", "protein", "dairy"]
     @dot_x = [
-      [42.40, "red"], [100.2, "red"], 
-      [158, "red-yellow"], [215.8, "red-yellow"], 
+      [42.40, "green"], [100.2, "green"], 
+      [158, "yellow-green"], [215.8, "yellow-green"], 
       [273.6, "yellow"], [331.4, "yellow"], 
-      [389.2, "yellow-green"], [447, "yellow-green"], 
-      [504.8, "green"], [562.60, "green"]
+      [389.2, "red-yellow"], [447, "red-yellow"], 
+      [504.8, "red"], [562.60, "red"]
     ]
 
     day = Day.find_by day: 14
@@ -114,15 +114,15 @@ class MainController < ApplicationController
   private
   def get_color(amount)
     if amount < 20 
-      return "red"
+      return "green"
     elsif amount < 40
-      return "orange"
+      return "green_yellow"
     elsif amount < 60
       return "yellow"
     elsif amount < 80
-      return "green_yellow"
+      return "orange"
     else
-      return "green"
+      return "red"
     end
   end
 
