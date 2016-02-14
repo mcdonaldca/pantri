@@ -10,6 +10,7 @@
 
 Day.delete_all
 User.delete_all
+Ingredient.delete_all
 
 # Days
 
@@ -107,18 +108,47 @@ user.sodium_goal = 2300
 user.save()
 
 
-# Fridge items
+# Ingredients
 
-milk = Item.new
+milk = Ingredient.new
 milk.name = "milk:skim milk:skim"
+milk.in_fridge = true
 milk.save()
 
-macaroni = Item.new
+macaroni = Ingredient.new
 macaroni.name = "macaroni:macaroni noodles:macaroni pasta:noodles:pasta"
+macaroni.in_fridge = true
 macaroni.save()
 
+butter = Ingredient.new
+butter.name = "butter"
+butter.in_fridge = true
+butter.save()
 
-# Ingredients
+flour = Ingredient.new
+flour.name = "flour"
+flour.in_fridge = true
+flour.save()
+
+cheddar_cheese = Ingredient.new
+cheddar_cheese.name = "cheddar cheese:cheese"
+cheddar_cheese.in_fridge = true
+cheddar_cheese.save()
+
+djon_mustard = Ingredient.new
+djon_mustard.name = "djon mustard:mustard"
+djon_mustard.in_fridge = true
+djon_mustard.save()
+
+broccoli = Ingredient.new
+broccoli.name = "broccoli"
+broccoli.in_fridge = true
+broccoli.save()
+
+bread_crumbs = Ingredient.new
+bread_crumbs.name = "bread crumbs"
+bread_crumbs.in_fridge = true
+bread_crumbs.save()
 
 
 # Receipes
