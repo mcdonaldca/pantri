@@ -163,5 +163,14 @@ class MainController < ApplicationController
     puts response.body
   end
 
+  def get_food_group_servings()
+    user = User.first
+    #user.days.each do |day|
+
+    #  day.vegetables_serv
+    #  day.save()
+    #end
+  end
+
   
 end

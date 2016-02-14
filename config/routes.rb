@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "summary" => "main#summary", :as => :summary
   get "pantry" => "main#pantry", :as => :pantry
   get "recipes" => "main#recipes", :as => :recipes
+  get "calculate" => "main#get_food_group_servings", :as => :calculate
   get "api/lifx/all/toggle" => "main#lifx_toggle"
 
   get "api/alexa/dinner" => "alexa#dinner"
