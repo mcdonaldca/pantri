@@ -17,6 +17,7 @@ class AlexaController < ApplicationController
     min_val = 100
     differences.each do |k, v| 
       if v < min_val 
+        min_val = v
         min_category = k.to_s
       end
     end
@@ -39,6 +40,7 @@ class AlexaController < ApplicationController
     exp_high = 30
     recipes.each do |r|
       if id == -1
+        puts r.name
         recipe = r.name
         id = r.id
       end

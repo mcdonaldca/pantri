@@ -114,3 +114,19 @@ menu {
     border-bottom: 4px solid $blue;
   }
 }
+
+.set-button {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  background-color: $lite-blue;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font: 15px Nunito;
+}
+
+.set-button:first-of-type {
+  margin-top: 50px;
+}

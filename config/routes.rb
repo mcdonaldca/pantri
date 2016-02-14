@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get "calculate" => "main#get_food_group_servings", :as => :calculate
   get "api/lifx/all/toggle" => "main#lifx_toggle"
 
+  get "veg_need" => "main#set_veg_need", :as => :veg_need
+  get "dairy_need" => "main#set_dairy_need", :as => :dairy_need
+  get "protein_need" => "main#set_protein_need", :as => :protein_need
+
   get "api/alexa/dinner" => "alexa#dinner"
   get "api/alexa/check/:recipe" => "alexa#check_missing"
   get "api/alexa/expiring/:ing/:exp" => "alexa#mark_expiring"

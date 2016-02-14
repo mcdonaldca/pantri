@@ -27,6 +27,39 @@ class MainController < ApplicationController
   def summary
   end
 
+  def set_veg_need
+    day = Day.find_by day: 14
+    day.fruits_serv =  3
+    day.vegetables_serv = 0
+    day.grains_serv = 5
+    day.dairy_serv = 3
+    day.protein_serv = 3
+    day.save()
+    redirect_to pantry_url
+  end
+
+  def set_dairy_need
+    day = Day.find_by day: 14
+    day.fruits_serv =  1
+    day.vegetables_serv = 3
+    day.grains_serv = 5
+    day.dairy_serv = 0
+    day.protein_serv = 1
+    day.save()
+    redirect_to pantry_url
+  end
+
+  def set_protein_need
+    day = Day.find_by day: 14
+    day.fruits_serv =  2
+    day.vegetables_serv = 5
+    day.grains_serv = 5
+    day.dairy_serv = 3
+    day.protein_serv = 0
+    day.save()
+    redirect_to pantry_url
+  end
+
   def pantry
     @groups = ["vegetables", "fruits", "grains", "protein", "dairy"]
     @dot_x = [
