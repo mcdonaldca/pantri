@@ -49,9 +49,9 @@ class MainController < ApplicationController
     veg_color = get_color(@stats["vegetables"])
     fruits_color = get_color(@stats["fruits"])
     protein_color = get_color(@stats["protein"])
-    set_vegetable_light(veg_color)
-    set_fruits_light(fruits_color)
-    set_protein_light(protein_color)
+    set_light("d073d510f8bc", veg_color)
+    set_light("d073d51260d5", fruits_color)
+    set_light("d073d511f543", protein_color)
   end
 
   def recipes
@@ -96,22 +96,46 @@ class MainController < ApplicationController
     elsif amount < 60
       return "yellow"
     elsif amount < 80
-      return "yellow_green"
+      return "green_yellow"
     else
       return "green"
     end
   end
 
-  def set_vegetable_light(color)
-
+  def get_hex_color(color) 
+    if color == "red"
+      return "red"
+    elsif color == "orange"
+      return "orange"
+    elsif color == "yellow"
+      return "#ADAD2F"
+    elsif color == "green_yellow"
+      return "yellow"
+    elsif color == "green"
+      return "green"
+    else 
+      return "#ffffff"
+    end
   end
 
-  def set_fruits_light(color)
+  def set_light(id, color)
+    uri = URI('https://api.lifx.com/v1/lights/id:' + id + '/state')
 
-  end
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-  def set_protein_light(color)
+    request = Net::HTTP::Put.new(uri.request_uri)
 
+    request.add_field('Authorization', 'Bearer ' + "c52305a1540daf85e91d07c606206f0a11f84072662c57c7709ad756c793e19f")
+
+    request.set_form_data({
+      "color" => get_hex_color(color),
+      "brightness"=> 0.4, 
+      "duration" => 0.01
+    })
+    response = http.request(request)
+    puts response.body
   end
 
   
