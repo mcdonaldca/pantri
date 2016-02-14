@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "api/lifx/all/toggle" => "main#lifx_toggle"
 
   get "api/alexa/dinner" => "alexa#dinner"
+  get "api/alexa/check/:recipe" => "alexa#check_missing"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

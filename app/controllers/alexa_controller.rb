@@ -34,12 +34,34 @@ class AlexaController < ApplicationController
       recipes = Recipe.all.where dairy_serving: true
     end
 
-    meal = "Cheddar Broccoli Casserole"
+    recipe = "Cheddar Broccoli Casserole"
+    id = 0;
     recipes.each do |r|
-      meal = r.name
+      recipe = r.name
+      id = r.id
+      break
     end
 
 
-    @json = "{ \"meal\": \"" + meal + "\" }"
+    @json = %Q({ "meal": { "name": ") + recipe + %Q(", "id": ") + id.to_s + %Q(" } })
+  end
+
+  def check_missing 
+    recipe = Recipe.find_by id: params[:recipe]
+
+    need = []
+    recipe.ingredients.each do |i|
+      unless i.in_fridge 
+        need << i.name.split(":")[0]
+      end
+    end
+
+    if need.empty?
+      json = %Q({ "ready": "true" })
+    else
+      json = %Q({ "ready": "false", "missing": ") + need[0] + %Q(" })
+    end
+
+    @json = json
   end
 end
