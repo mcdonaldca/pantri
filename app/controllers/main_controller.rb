@@ -38,12 +38,13 @@ class MainController < ApplicationController
     ]
 
     day = Day.find_by day: 14
+    user = User.first
     @stats = {
-      @groups[0] => day.vegetables_serv * 100 / 4, # vegetables
-      @groups[1] => day.fruits_serv * 100 / 3, # fruits
-      @groups[2] => day.grains_serv * 100 / 9, # grains
-      @groups[3] => day.protein_serv * 100 / 6, # protein
-      @groups[4] => day.dairy_serv * 100 / 3  # dairy
+      @groups[0] => day.vegetables_serv * 100 / user.vegetables_serv_goal, # vegetables
+      @groups[1] => day.fruits_serv * 100 / user.fruits_serv_goal, # fruits
+      @groups[2] => day.grains_serv * 100 / user.grains_serv_goal, # grains
+      @groups[3] => day.protein_serv * 100 / user.protein_serv_goal, # protein
+      @groups[4] => day.dairy_serv * 100 / user.dairy_serv_goal  # dairy
     }
 
     veg_color = get_color(@stats["vegetables"])

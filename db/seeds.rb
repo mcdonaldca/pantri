@@ -92,6 +92,11 @@ today.save()
 
 user = User.new
 user.name = "Caitlin McDonald"
+user.fruits_serv_goal = 4
+user.vegetables_serv_goal = 3
+user.grains_serv_goal = 9 
+user.dairy_serv_goal = 6
+user.protein_serv_goal = 3
 user.calorie_goal = 1200
 user.protein_goal = 85
 user.carbs_goal = 211
